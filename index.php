@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert the data into the database or whatever
 	#######################################################
 	
-	// For this exxample, we write post data to log file instead
+	// For this exxample, we write post data to log file
 	$clientWebsiteInfo = ($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? '') . ' ' . $_SERVER['REMOTE_ADDR'];
 	logMessage('info', 'Posted Data From: ' . $clientWebsiteInfo, $data);
 	
