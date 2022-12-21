@@ -4,6 +4,8 @@ This script allows other sites to post data to us and then we can use that data 
 
 We give them fixed secret key and they must pass that secret via bearer token to be able to call our API.
 
+This example will actually log posted data into `log.txt` file.
+
 ### Usage
 
 ```php

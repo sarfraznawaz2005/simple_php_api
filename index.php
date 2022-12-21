@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/functions.php';
+
 header("Access-Control-Allow-Origin: *");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,6 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	#######################################################
     // Insert the data into the database or whatever
 	#######################################################
+	
+	// For this exxample, we write post data to log file instead
+	$clientWebsiteInfo = ($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? '') . ' ' . $_SERVER['REMOTE_ADDR'];
+	logMessage('info', 'Posted Data From: ' . $clientWebsiteInfo, $data);
 	
     // but for this exampke, we pass this data back to user
     echo json_encode(['data' => $data]);
